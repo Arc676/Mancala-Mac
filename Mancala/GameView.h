@@ -27,4 +27,16 @@
 
 @interface GameView : NSView
 
+// game state
+@property (assign) MancalaBoard *board;
+
+// game properties
+@property (assign) BOOL gameInProgress, fastMode, _2player;
+@property (assign) int pebbleCount;
+
+// interface elements
+@property (assign) NSRect pebblesUp, pebblesDown, fmButton, _2pButton;
+
+- (void) startGame;
+
 @end

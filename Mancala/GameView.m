@@ -25,7 +25,67 @@
 
 @implementation GameView
 
+- (void)awakeFromNib {
+	self.pebbleCount = 4;
+	self.fastMode = NO;
+	self.gameInProgress = NO;
+	self._2player = NO;
+
+	self.pebblesUp = NSMakeRect(100, 160, 100, 100);
+	self.pebblesDown = NSMakeRect(100, 50, 100, 100);
+
+	self.fmButton = NSMakeRect(210, 100, 100, 100);
+	self._2pButton = NSMakeRect(320, 100, 100, 100);
+}
+
 - (void)drawRect:(NSRect)rect {
+	[[NSColor whiteColor] set];
+	NSRectFill(rect);
+	if (self.gameInProgress) {
+	} else {
+		[[NSColor grayColor] set];
+		NSRectFill(self.pebblesUp);
+		NSRectFill(self.pebblesDown);
+		[[NSString stringWithFormat:@"%d", self.pebbleCount] drawAtPoint:NSMakePoint(120, 70) withAttributes:nil];
+
+		if (self.fastMode) {
+			[[NSColor greenColor] set];
+		} else {
+			[[NSColor redColor] set];
+		}
+		NSRectFill(self.fmButton);
+
+		if (self._2player) {
+			[[NSColor greenColor] set];
+		} else {
+			[[NSColor redColor] set];
+		}
+		NSRectFill(self._2pButton);
+	}
+}
+
+- (void)mouseUp:(NSEvent *)event {
+	if (self.gameInProgress) {
+	} else {
+		if (NSPointInRect(event.locationInWindow, self.pebblesUp)) {
+			self.pebbleCount++;
+		} else if (self.pebbleCount > 1 && NSPointInRect(event.locationInWindow, self.pebblesDown)) {
+			self.pebbleCount--;
+		} else if (NSPointInRect(event.locationInWindow, self.fmButton)) {
+			self.fastMode = !self.fastMode;
+		} else if (NSPointInRect(event.locationInWindow, self._2pButton)) {
+			self._2player = !self._2player;
+		}
+	}
+	[self setNeedsDisplay:YES];
+}
+
+- (void)startGame {
+	if (self.board) {
+		free(self.board);
+	}
+	self.board = (MancalaBoard*)malloc(sizeof(MancalaBoard));
+	setupBoard(self.board, self.pebbleCount, self.fastMode);
 }
 
 @end
