@@ -16,6 +16,7 @@
 		718CBAEC20EB51E60075C180 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAEB20EB51E60075C180 /* LICENSE */; };
 		718CBAEE20EB51F20075C180 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAED20EB51F20075C180 /* README.md */; };
 		718CBAF020EB52840075C180 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAEF20EB52830075C180 /* Credits.rtf */; };
+		718CBAF320EB54210075C180 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 718CBAF220EB54210075C180 /* GameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		718CBAEB20EB51E60075C180 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		718CBAED20EB51F20075C180 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		718CBAEF20EB52830075C180 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		718CBAF120EB54210075C180 /* GameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		718CBAF220EB54210075C180 /* GameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 				718CBAD320EB515A0075C180 /* AppDelegate.m */,
 				718CBAD520EB515B0075C180 /* ViewController.h */,
 				718CBAD620EB515B0075C180 /* ViewController.m */,
+				718CBAF120EB54210075C180 /* GameView.h */,
+				718CBAF220EB54210075C180 /* GameView.m */,
 				718CBAD820EB515D0075C180 /* Assets.xcassets */,
 				718CBADA20EB515D0075C180 /* Main.storyboard */,
 				718CBADD20EB515D0075C180 /* Info.plist */,
@@ -175,6 +180,7 @@
 			files = (
 				718CBAD720EB515B0075C180 /* ViewController.m in Sources */,
 				718CBADF20EB515D0075C180 /* main.m in Sources */,
+				718CBAF320EB54210075C180 /* GameView.m in Sources */,
 				718CBAD420EB515A0075C180 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
