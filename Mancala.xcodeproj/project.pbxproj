@@ -17,6 +17,8 @@
 		718CBAEE20EB51F20075C180 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAED20EB51F20075C180 /* README.md */; };
 		718CBAF020EB52840075C180 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAEF20EB52830075C180 /* Credits.rtf */; };
 		718CBAF320EB54210075C180 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 718CBAF220EB54210075C180 /* GameView.m */; };
+		718CBAF720EB7BEA0075C180 /* Down.png in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAF520EB7BEA0075C180 /* Down.png */; };
+		718CBAF820EB7BEA0075C180 /* Up.png in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAF620EB7BEA0075C180 /* Up.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		718CBAEF20EB52830075C180 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		718CBAF120EB54210075C180 /* GameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		718CBAF220EB54210075C180 /* GameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		718CBAF520EB7BEA0075C180 /* Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Down.png; sourceTree = "<group>"; };
+		718CBAF620EB7BEA0075C180 /* Up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Up.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		718CBAC620EB515A0075C180 = {
 			isa = PBXGroup;
 			children = (
+				718CBAF420EB7BEA0075C180 /* Sprites */,
 				718CBAEA20EB51DE0075C180 /* Meta */,
 				718CBAE620EB51D80075C180 /* lib */,
 				718CBAD120EB515A0075C180 /* Mancala */,
@@ -104,6 +109,15 @@
 				718CBAED20EB51F20075C180 /* README.md */,
 			);
 			name = Meta;
+			sourceTree = "<group>";
+		};
+		718CBAF420EB7BEA0075C180 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				718CBAF520EB7BEA0075C180 /* Down.png */,
+				718CBAF620EB7BEA0075C180 /* Up.png */,
+			);
+			path = Sprites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +180,8 @@
 				718CBAF020EB52840075C180 /* Credits.rtf in Resources */,
 				718CBAEC20EB51E60075C180 /* LICENSE in Resources */,
 				718CBAD920EB515D0075C180 /* Assets.xcassets in Resources */,
+				718CBAF720EB7BEA0075C180 /* Down.png in Resources */,
+				718CBAF820EB7BEA0075C180 /* Up.png in Resources */,
 				718CBAEE20EB51F20075C180 /* README.md in Resources */,
 				718CBADC20EB515D0075C180 /* Main.storyboard in Resources */,
 			);

@@ -35,7 +35,8 @@
 @property (assign) int pebbleCount;
 
 // interface elements
-@property (assign) NSRect pebblesUp, pebblesDown, fmButton, _2pButton;
+@property (assign) NSRect pebblesUp, pebblesDown, fmButton, _2pButton, gameStart;
+@property (strong) NSImage *pUp, *pDown;
 
 - (void) startGame;
 

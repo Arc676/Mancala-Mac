@@ -31,8 +31,11 @@
 	self.gameInProgress = NO;
 	self._2player = NO;
 
-	self.pebblesUp = NSMakeRect(100, 160, 100, 100);
-	self.pebblesDown = NSMakeRect(100, 50, 100, 100);
+	self.pebblesUp = NSMakeRect(100, 160, 100, 50);
+	self.pebblesDown = NSMakeRect(100, 50, 100, 50);
+
+	self.pUp = [NSImage imageNamed:@"Up.png"];
+	self.pDown = [NSImage imageNamed:@"Down.png"];
 
 	self.fmButton = NSMakeRect(210, 100, 100, 100);
 	self._2pButton = NSMakeRect(320, 100, 100, 100);
@@ -44,8 +47,8 @@
 	if (self.gameInProgress) {
 	} else {
 		[[NSColor grayColor] set];
-		NSRectFill(self.pebblesUp);
-		NSRectFill(self.pebblesDown);
+		[self.pUp drawInRect:self.pebblesUp];
+		[self.pDown drawInRect:self.pebblesDown];
 		[[NSString stringWithFormat:@"%d", self.pebbleCount] drawAtPoint:NSMakePoint(120, 70) withAttributes:nil];
 
 		if (self.fastMode) {
