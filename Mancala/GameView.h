@@ -29,6 +29,7 @@
 
 // game state
 @property (assign) MancalaBoard *board;
+@property (assign) int currentPlayer;
 
 // game properties
 @property (assign) BOOL gameInProgress, fastMode, _2player;
@@ -39,5 +40,6 @@
 @property (strong) NSImage *pUp, *pDown;
 
 - (void) startGame;
+- (void) performComputerMove;
 
 @end
