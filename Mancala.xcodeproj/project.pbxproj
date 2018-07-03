@@ -12,6 +12,10 @@
 		718CBAD920EB515D0075C180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAD820EB515D0075C180 /* Assets.xcassets */; };
 		718CBADC20EB515D0075C180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718CBADA20EB515D0075C180 /* Main.storyboard */; };
 		718CBADF20EB515D0075C180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 718CBADE20EB515D0075C180 /* main.m */; };
+		718CBAE920EB51D90075C180 /* libmancala.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 718CBAE720EB51D80075C180 /* libmancala.a */; };
+		718CBAEC20EB51E60075C180 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAEB20EB51E60075C180 /* LICENSE */; };
+		718CBAEE20EB51F20075C180 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAED20EB51F20075C180 /* README.md */; };
+		718CBAF020EB52840075C180 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 718CBAEF20EB52830075C180 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,11 @@
 		718CBADD20EB515D0075C180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		718CBADE20EB515D0075C180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		718CBAE020EB515D0075C180 /* Mancala.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mancala.entitlements; sourceTree = "<group>"; };
+		718CBAE720EB51D80075C180 /* libmancala.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmancala.a; sourceTree = "<group>"; };
+		718CBAE820EB51D80075C180 /* libmancala.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmancala.h; sourceTree = "<group>"; };
+		718CBAEB20EB51E60075C180 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		718CBAED20EB51F20075C180 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		718CBAEF20EB52830075C180 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718CBAE920EB51D90075C180 /* libmancala.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +51,8 @@
 		718CBAC620EB515A0075C180 = {
 			isa = PBXGroup;
 			children = (
+				718CBAEA20EB51DE0075C180 /* Meta */,
+				718CBAE620EB51D80075C180 /* lib */,
 				718CBAD120EB515A0075C180 /* Mancala */,
 				718CBAD020EB515A0075C180 /* Products */,
 			);
@@ -57,6 +69,7 @@
 		718CBAD120EB515A0075C180 /* Mancala */ = {
 			isa = PBXGroup;
 			children = (
+				718CBAEF20EB52830075C180 /* Credits.rtf */,
 				718CBAD220EB515A0075C180 /* AppDelegate.h */,
 				718CBAD320EB515A0075C180 /* AppDelegate.m */,
 				718CBAD520EB515B0075C180 /* ViewController.h */,
@@ -68,6 +81,24 @@
 				718CBAE020EB515D0075C180 /* Mancala.entitlements */,
 			);
 			path = Mancala;
+			sourceTree = "<group>";
+		};
+		718CBAE620EB51D80075C180 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				718CBAE720EB51D80075C180 /* libmancala.a */,
+				718CBAE820EB51D80075C180 /* libmancala.h */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		718CBAEA20EB51DE0075C180 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				718CBAEB20EB51E60075C180 /* LICENSE */,
+				718CBAED20EB51F20075C180 /* README.md */,
+			);
+			name = Meta;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +158,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718CBAF020EB52840075C180 /* Credits.rtf in Resources */,
+				718CBAEC20EB51E60075C180 /* LICENSE in Resources */,
 				718CBAD920EB515D0075C180 /* Assets.xcassets in Resources */,
+				718CBAEE20EB51F20075C180 /* README.md in Resources */,
 				718CBADC20EB515D0075C180 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +315,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Arc676.Mancala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -298,6 +336,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Arc676.Mancala;
 				PRODUCT_NAME = "$(TARGET_NAME)";
