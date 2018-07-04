@@ -32,6 +32,7 @@
 	self._2player = NO;
 
 	self.currentPlayer = 1;
+	self.endState = NOT_OVER;
 
 	self.pebblesUp = NSMakeRect(50, 160, 100, 50);
 	self.pebblesDown = NSMakeRect(50, 50, 100, 50);
@@ -64,6 +65,23 @@
 			NSRectFill(pocket);
 			[[NSString stringWithFormat:@"%d", self.board->board[i]] drawAtPoint:NSMakePoint(x, yi) withAttributes:nil];
 		}
+		NSPoint point = NSMakePoint(30, 250);
+		switch (self.endState & ~FAST_WIN) {
+			case P1_WINS | P2_WINS:
+				[@"Tie!" drawAtPoint:point withAttributes:nil];
+				break;
+			case P1_WINS:
+				[@"Player 1 wins!" drawAtPoint:point withAttributes:nil];
+				break;
+			case P2_WINS:
+				[@"Player 2 wins!" drawAtPoint:point withAttributes:nil];
+				break;
+			case NOT_OVER:
+				[[NSString stringWithFormat:@"Player %d's turn", self.currentPlayer] drawAtPoint:point withAttributes:nil];
+				break;
+			default:
+				break;
+		}
 	} else {
 		[[NSColor grayColor] set];
 		NSRectFill(self.gameStart);
@@ -89,6 +107,10 @@
 }
 
 - (void)mouseUp:(NSEvent *)event {
+	if (self.endState != NOT_OVER) {
+		self.gameInProgress = NO;
+		return;
+	}
 	if (self.gameInProgress) {
 		NSPoint loc = event.locationInWindow;
 		if (loc.x >= 85 && loc.x <= 445 && loc.y >= 20 && loc.y <= 130) {
@@ -96,7 +118,13 @@
 			if (loc.y >= 80) {
 				pocket = getOppositePocket(pocket);
 			}
-			int result = movePocket(self.board, pocket, MANCALA_GOAL1);
+			// check that the chosen pocket belongs to the correct player
+			if ((pocket > MANCALA_GOAL1) == (self.currentPlayer == 1)) {
+				return;
+			}
+			int result = movePocket(self.board,
+									pocket,
+									self.currentPlayer == 1 ? MANCALA_GOAL1 : MANCALA_GOAL2);
 			if (result == MOVE_EXTRA_TURN) {
 				[self setNeedsDisplay:YES];
 				return;
@@ -108,7 +136,7 @@
 			} else {
 				[self performComputerMove];
 			}
-			self.gameInProgress = !gameIsOver(self.board);
+			self.endState = gameIsOver(self.board);
 		}
 	} else {
 		if (NSPointInRect(event.locationInWindow, self.pebblesUp)) {

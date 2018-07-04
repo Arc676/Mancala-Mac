@@ -29,7 +29,7 @@
 
 // game state
 @property (assign) MancalaBoard *board;
-@property (assign) int currentPlayer;
+@property (assign) int currentPlayer, endState;
 
 // game properties
 @property (assign) BOOL gameInProgress, fastMode, _2player;
